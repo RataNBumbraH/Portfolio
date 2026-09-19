@@ -1265,3 +1265,46 @@
     text-align: center;
   }
 }
+
+@media (max-width: 640px) {
+  body, html {
+    overflow-x: hidden;
+  }
+
+  .container, .navbar-inner, .footer-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .hero-avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .projects-grid,
+  .skills-strip-grid,
+  .featured-grid,
+  .other-skills-grid {
+    gap: 16px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; 
+  }
+}
