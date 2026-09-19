@@ -1266,6 +1266,7 @@
   }
 }
 
+/* Consolidated Mobile Fixes */
 @media (max-width: 640px) {
   body, html {
     overflow-x: hidden;
@@ -1276,14 +1277,13 @@
     padding-right: 16px;
   }
 
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .hero-actions .btn {
-    width: 100%;
-    justify-content: center;
+  .hero-image-wrap {
+    order: -1;
   }
 
   .hero-image {
@@ -1296,15 +1296,38 @@
     height: 140px;
   }
 
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-strip-card,
+  .about-top,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-strip-stats,
+  .about-stats {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .projects-grid,
   .skills-strip-grid,
   .featured-grid,
   .other-skills-grid {
+    grid-template-columns: 1fr;
     gap: 16px;
   }
 
   .form-group input,
   .form-group textarea {
-    font-size: 16px; 
+    font-size: 16px; /* Prevents auto-zoom on mobile inputs */
   }
 }
