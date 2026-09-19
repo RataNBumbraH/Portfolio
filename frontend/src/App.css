@@ -972,31 +972,53 @@ textarea:focus-visible {
 }
 
 @media (max-width: 640px) {
+  /* Mobile skill rows:
+     icon + skill name stay side-by-side on the first row.
+     The progress bar and percentage stay on the row below. */
   .active-skill-row {
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 40px minmax(0, 1fr);
     grid-template-areas:
       "icon name"
-      "bar bar"
       "bar percent";
+    column-gap: 12px;
     row-gap: 8px;
+    align-items: center;
   }
 
   .skill-icon-lg {
     grid-area: icon;
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
   }
 
   .active-skill-name {
     grid-area: name;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .active-skill-row .skill-bar {
     grid-area: bar;
+    width: 100%;
+    min-width: 0;
   }
 
   .active-skill-row .skill-percent {
     grid-area: percent;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* Keep small-skill logos and names aligned horizontally too. */
+  .other-skill-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .skill-icon-sm {
+    flex-shrink: 0;
   }
 
   .other-skills-grid {
