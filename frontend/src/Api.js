@@ -1,4 +1,6 @@
-const API = "http://localhost:5000/api";
+const API = window.location.hostname === "localhost"
+  ? "http://localhost:5000"
+  : "https://ratan-bumbrah-portfolio.onrender.com";
 
 // ── Projects ────────────────────────────────────────────────
 export const getProjects = async (category = "All") => {
